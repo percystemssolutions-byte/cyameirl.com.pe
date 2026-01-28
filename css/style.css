@@ -117,15 +117,6 @@ form button {
     }
 }
 
-.header {
-    position: sticky;
-    top: 0;
-    background-color: #0b3c3d;
-    z-index: 1000;
-    padding: 15px;
-    text-align: center;
-}
-
 .logo {
     max-width: 220px;
     transition: transform 0.3s ease, opacity 0.3s ease;
