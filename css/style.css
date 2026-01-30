@@ -282,3 +282,80 @@ p {
     height: 22px;
     fill: var(--blanco);
 }
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+/* Base del icono */
+.social-link {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Facebook gradient */
+.social-link.facebook {
+    background: linear-gradient(135deg, #1877F2, #0B3C8A);
+}
+
+/* Instagram gradient */
+.social-link.instagram {
+    background: radial-gradient(circle at 30% 30%,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5);
+}
+
+/* Icon SVG */
+.social-icon {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+}
+
+/* Hover effect */
+.social-link:hover {
+    transform: scale(1.15);
+}
+
+/* Tooltip */
+.social-link::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 55px;
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    transform: translateY(5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Tooltip visible */
+.social-link:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación suave flotante */
+@keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
+}
